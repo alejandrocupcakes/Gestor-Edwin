@@ -1,0 +1,168 @@
+/* Gamer-inspired Task Component Styles */
+.task {
+    background: linear-gradient(135deg, #1a1a2e, #16213e);
+    border-radius: 12px;
+    border: 2px solid #0f3460;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
+    margin-bottom: 16px;
+    padding: 16px;
+    position: relative;
+    transition: all 0.3s ease;
+    overflow: hidden;
+}
+
+.task:hover {
+    transform: scale(1.02);
+    box-shadow: 0 12px 32px rgba(0, 0, 0, 0.5);
+}
+
+.status-indicator {
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 8px;
+    transition: background-color 0.3s ease;
+}
+
+.status-indicator.pending {
+    background: linear-gradient(to bottom, #ff6b6b, #feca57);
+}
+
+.status-indicator.completed {
+    background: linear-gradient(to bottom, #48dbfb, #1dd1a1);
+}
+
+.task form {
+    display: grid;
+    gap: 12px;
+}
+
+.task .input {
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid #0f3460;
+    color: #e2e2e2;
+    padding: 10px;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+}
+
+.task .input:focus {
+    outline: none;
+    border-color: #48dbfb;
+    box-shadow: 0 0 0 3px rgba(72, 219, 251, 0.3);
+}
+
+.task textarea {
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid #0f3460;
+    color: #e2e2e2;
+    padding: 10px;
+    border-radius: 8px;
+    resize: vertical;
+    transition: all 0.3s ease;
+}
+
+.task textarea:focus {
+    outline: none;
+    border-color: #48dbfb;
+    box-shadow: 0 0 0 3px rgba(72, 219, 251, 0.3);
+}
+
+.urgencyLabels {
+    display: flex;
+    justify-content: space-between;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 8px;
+    padding: 8px;
+}
+
+.urgencyLabels label {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    color: #a2a2a2;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+.urgencyLabels label input {
+    appearance: none;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    border: 2px solid #0f3460;
+    outline: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.urgencyLabels label.selected {
+    color: #48dbfb;
+}
+
+.urgencyLabels label.low input {
+    background-color: #48dbfb;
+}
+
+.urgencyLabels label.medium input {
+    background-color: #ff6b6b;
+}
+
+.urgencyLabels label.high input {
+    background-color: #ff9ff3;
+}
+
+.urgencyLabels label input:checked {
+    box-shadow: 0 0 0 4px rgba(72, 219, 251, 0.3);
+}
+
+.task .button {
+    background: linear-gradient(135deg, #48dbfb, #1dd1a1);
+    border: none;
+    color: #ffffff;
+    padding: 10px 16px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.task .button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
+}
+
+.task .button.delete {
+    background: linear-gradient(135deg, #ff6b6b, #ee5253);
+    margin-left: 8px;
+}
+
+.task .button.complete {
+    background: linear-gradient(135deg, #5f27cd, #341f97);
+}
+
+.task .button.complete.completed {
+    background: linear-gradient(135deg, #1dd1a1, #10ac84);
+}
+
+.task .moveTask {
+    background: rgba(255, 255, 255, 0.1);
+    color: #48dbfb;
+    border: 1px solid #0f3460;
+}
+
+.task .moveTask:hover {
+    background: rgba(72, 219, 251, 0.2);
+}
+
+.task.collapsedTask {
+    max-height: 60px;
+    overflow: hidden;
+}
+
+.task.completed {
+    opacity: 0.7;
+    filter: grayscale(50%);
+}
